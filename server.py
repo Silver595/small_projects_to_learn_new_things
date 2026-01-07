@@ -14,6 +14,6 @@ while True:
     if not data:
         break
     print(f"Received: {data}")
-    conn.send(data.encode())
+    conn.send(data.encode())  
 
 conn.close()
