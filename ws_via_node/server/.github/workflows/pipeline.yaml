@@ -2,7 +2,7 @@ name: server ci pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [ci-test]
 
 jobs:
   build:
