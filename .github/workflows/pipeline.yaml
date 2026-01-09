@@ -24,5 +24,5 @@ jobs:
         working-directory: ./ws_via_node/server
       
       - name: run test
-        run: npm test
+        run: npm index.js
         working-directory: ./ws_via_node/server
