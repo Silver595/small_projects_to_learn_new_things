@@ -1,0 +1,28 @@
+name: ci final test pipeline
+
+on:
+  push:
+    branches: [ci-test]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: set ups node js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: install dependencies
+        run: npm install
+        working-directory: ./ws_via_node/server
+      
+      - name: run test
+        run: npm test
+        working-directory: ./ws_via_node/server
