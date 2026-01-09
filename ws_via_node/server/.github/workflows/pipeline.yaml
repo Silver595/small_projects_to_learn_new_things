@@ -3,4 +3,22 @@ name: server ci pipeline
 on:
   push:
     branches: [main]
-    
+
+jobs:
+  build:
+    runs-on: archlinux-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: set ups node js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '25'
+
+      - name: install dependencies
+        run: npm install
+
+      - name: run test
+      - run: npm test
