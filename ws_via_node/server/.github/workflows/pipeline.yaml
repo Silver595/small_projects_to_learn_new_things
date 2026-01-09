@@ -1,0 +1,6 @@
+name: server ci pipeline
+
+on:
+  push:
+    branches: [main]
+    
