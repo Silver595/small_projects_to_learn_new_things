@@ -1,28 +1,27 @@
-name: ci final test pipeline
+name: check for pipline changes
 
 on:
   push:
     branches: [ci-test]
-  pull_request:
-    branches: [main]
+    pull-request : [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
+    jobs:
+      - name: checkout code
+      - uses: actions/checkout@v5
 
-      - name: set ups node js
-        uses: actions/setup-node@v5
+      - name: setup node js
+      - uses: actions/setup-node@v5
         with:
           node-version: '20'
 
       - name: install dependencies
-        run: npm install
-        working-directory: ./ws_via_node/server
-      
+      - uses: npm install
+      - working-directory: ./DevOps_Pipelines/
+
       - name: run test
-        run: node index.js
-        working-directory: ./ws_via_node/server
+      - uses: node test.js
+      - working-directory: ./DevOps_Pipelines/
