@@ -11,17 +11,17 @@ jobs:
 
     steps:
       - name: checkout code
-      - uses: actions/checkout@v5
+        uses: actions/checkout@v5
 
       - name: setup node js
-      - uses: actions/setup-node@v5
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
 
       - name: install dependencies
-      - uses: npm install
-      - working-directory: ./DevOps_Pipelines/
+        uses: npm install
+        working-directory: ./DevOps_Pipelines/
 
       - name: run test
-      - uses: node test.js
-      - working-directory: ./DevOps_Pipelines/
+        uses: node test.js
+        working-directory: ./DevOps_Pipelines/
