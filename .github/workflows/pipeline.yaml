@@ -19,9 +19,9 @@ jobs:
           node-version: '20'
 
       - name: install dependencies
-        uses: npm install
+        run: npm install
         working-directory: ./DevOps_Pipelines/
 
       - name: run test
-        uses: node test.js
+        run: node test.js
         working-directory: ./DevOps_Pipelines/
